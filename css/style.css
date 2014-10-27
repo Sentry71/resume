@@ -95,6 +95,10 @@ a {
   display: none;
 }
 
+#onlineH3 {
+  padding-left: 0;
+}
+
 .orange {
   background-color: #F5AE23;
 }
@@ -125,6 +129,9 @@ a {
 
 .flex-box {
   display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -webkit-justify-content: space-around;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

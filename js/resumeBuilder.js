@@ -1,16 +1,16 @@
 var work = {
   "jobs" : [{
     "employer": "AT&T",
-    "title" : "Network Center Technician",
-    "location" : "Earth City, MO",
-    "dates" : "June 2000 - October 2007",
-    "description" : "Call center technician, specializing in customer support of DSL trouble calls."
-  },{
-    "employer": "AT&T",
     "title" : "Senior IT Analyst",
     "location" : "Earth City, MO",
     "dates" : "October 2007 - present",
     "description" : "Programmer and web developer, specializing in full stack web development of tools for use by internal AT&T customer support teams."
+  },{
+    "employer": "AT&T",
+    "title" : "Network Center Technician",
+    "location" : "Earth City, MO",
+    "dates" : "June 2000 - October 2007",
+    "description" : "Call center technician, specializing in customer support of DSL trouble calls."
   }],
   "display" : function() {
     for (index in work.jobs){
@@ -81,7 +81,7 @@ var bio = {
     "linkedin" : "Gary Hill",
     "location" : "Shiloh, IL"
   },
-  "skills" : ["HTML","Perl","Oracle"],
+  "skills" : ["HTML","CSS","JavaScript","Perl","Oracle"],
   "bioPic" : "images/fry.jpg",
   "display" : function() {
     formattedName = HTMLheaderName.replace("%data%",bio.name);

@@ -99,6 +99,14 @@ a {
   padding-left: 0;
 }
 
+#col-left {
+  width: 65%;
+}
+
+#col-right {
+  width: 35%;
+}
+
 .orange {
   background-color: #F5AE23;
 }
@@ -201,6 +209,14 @@ span {
   }
   .welcome-message {
     display: none;
+  }
+  .flex-box {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+  #col-left,
+  #col-right {
+    width: 100%;
   }
 }
 

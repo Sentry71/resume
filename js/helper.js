@@ -130,18 +130,27 @@ function initializeMap() {
     var locations = [];
 
     // adds the single location property from bio to the locations array
-    locations.push(bio.contacts.location);
+    var loc = bio.contacts.location;
+    var loc_txt = "Home";
+    var color = "red";
+    locations.push([loc,loc_txt,color]);
 
     // iterates through school locations and appends each location to
     // the locations array
     for (var school in education.schools) {
-      locations.push(education.schools[school].location);
+      var loc = education.schools[school].location;
+      var loc_txt = education.schools[school].name;
+      var color = "blue";
+      locations.push([loc,loc_txt,color]);
     }
 
     // iterates through work locations and appends each location to
     // the locations array
     for (var job in work.jobs) {
-      locations.push(work.jobs[job].location);
+      var loc = work.jobs[job].location;
+      var loc_txt = work.jobs[job].employer;
+      var color = "green";
+      locations.push([loc,loc_txt,color]);
     }
 
     return locations;
@@ -152,8 +161,7 @@ function initializeMap() {
   placeData is the object returned from search results containing information
   about a single location.
   */
-  function createMapMarker(placeData) {
-
+  function createMapMarker(placeData, note, pinColor) {
     // The next lines save location data from the search result object to local variables
     var lat = placeData.geometry.location.k;  // latitude from the place service
     var lon = placeData.geometry.location.B;  // longitude from the place service
@@ -165,6 +173,7 @@ function initializeMap() {
       map: map,
       position: placeData.geometry.location,
       title: name,
+      icon: "http://maps.google.com/mapfiles/ms/icons/" + pinColor + "-dot.png",
       animation: google.maps.Animation.DROP
     });
 
@@ -172,7 +181,7 @@ function initializeMap() {
     // or hover over a pin on a map. They usually contain more information
     // about a location.
     var infoWindow = new google.maps.InfoWindow({
-      content: name
+      content: note
     });
 
     // hmmmm, I wonder what this is about...
@@ -190,16 +199,6 @@ function initializeMap() {
   }
 
   /*
-  callback(results, status) makes sure the search returned results for a location.
-  If so, it creates a new map marker for that location.
-  */
-  function callback(results, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      createMapMarker(results[0])
-    }
-  }
-
-  /*
   pinPoster(locations) takes in the array of locations created by locationFinder()
   and fires off Google place searches for each location
   */
@@ -210,17 +209,19 @@ function initializeMap() {
     var service = new google.maps.places.PlacesService(map);
 
     // Iterates through the array of locations, creates a search object for each location
-    for (place in locations) {
-
+    //for (var place in locations) {
       // the search request object
       var request = {
-        query: locations[place]
+        query: locations[0]
       }
-
-      // Actually searches the Google Maps API for location data and runs the callback
+      // Actually searches the Google Maps API for location data and runs the
       // function with the search results after each search.
-      service.textSearch(request, callback);
-    }
+      service.textSearch(request, function (results, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+          createMapMarker(results[0], locations[1], locations[2]);
+        }
+      });
+    //}
   }
 
   // Sets the boundaries of the map based on pin locations
@@ -231,8 +232,9 @@ function initializeMap() {
 
   // pinPoster(locations) creates pins on the map for each location in
   // the locations array
-  pinPoster(locations);
-
+  for (index in locations){
+    pinPoster(locations[index]);
+  }
 };
 
 /*

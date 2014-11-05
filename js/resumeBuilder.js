@@ -1,16 +1,16 @@
 var work = {
   "jobs" : [{
     "employer": "AT&T",
-    "title" : "Network Center Technician",
-    "location" : "Earth City, MO",
-    "dates" : "June 2000 - October 2007",
-    "description" : "Call center technician, specializing in customer support of DSL trouble calls."
-  },{
-    "employer": "AT&T",
     "title" : "Senior IT Analyst",
     "location" : "Earth City, MO",
     "dates" : "October 2007 - present",
     "description" : "Programmer and web developer, specializing in full stack web development of tools for use by internal AT&T customer support teams."
+  },{
+    "employer": "AT&T",
+    "title" : "Network Center Technician",
+    "location" : "Earth City, MO",
+    "dates" : "June 2000 - October 2007",
+    "description" : "Call center technician, specializing in customer support of DSL trouble calls."
   }],
   "display" : function() {
     for (index in work.jobs){
@@ -37,22 +37,25 @@ var projects = {
     "title" : "1st Column Website",
     "dates" : 2011,
     "description" : "Website written in support of the 1st Column fleet inside of Star Trek Online.",
-    "images": ["images/1st_column.jpg","images/1st_column_2.jpg"]
+    "images": ["images/1st_column.jpg","images/1st_column_2.jpg"],
+    "url" : "http://1stcolumn.org"
   },{
     "title" : "Interactive Resume",
     "dates" : 2014,
     "description" : "Resume with data dynamically added to the web page.",
-    "images": ["images/197x148.gif","images/197x148.gif"]
+    "images": ["images/197x148.gif","images/197x148.gif"],
+    "url" : "#"
   },{
     "title" : "Web Portfolio",
     "dates" : 2014,
     "description" : "Web page detailing projects finished with the Nanodegree courses.",
-    "images": ["images/197x148.gif","images/197x148.gif"]
+    "images": ["images/197x148.gif","images/197x148.gif"],
+    "url" : "#"
   }],
   "display" : function() {
     $("#projects").append(HTMLprojectStart);
     for (index in projects.projects) {
-      formattedTitle = HTMLprojectTitle.replace("%data%",projects.projects[index].title);
+      formattedTitle = HTMLprojectTitle.replace("%data%",projects.projects[index].title).replace("%url%",projects.projects[index].url);
       $(".project-entry:last").append(formattedTitle);
       formattedDates = HTMLworkDates.replace("%data%",projects.projects[index].dates);
       $(".project-entry:last").append(formattedDates);
@@ -75,13 +78,13 @@ var bio = {
   "role" : "Web Developer",
   "welcomeMessage" : "This is a welcome message - at least it's better than Hello World!",
   "contacts" : {
-    "mobile" : "618-225-0351",
+    "mobile" : "618-225-XXXX",
     "email" : "ghill315@att.net",
     "github" : "sentry71",
-    "linkedin" : "Gary Hill",
+    "linkedin" : "garyhilljr",
     "location" : "Shiloh, IL"
   },
-  "skills" : ["HTML","Perl","Oracle"],
+  "skills" : ["HTML","CSS","JavaScript","Perl","Oracle"],
   "bioPic" : "images/fry.jpg",
   "display" : function() {
     formattedName = HTMLheaderName.replace("%data%",bio.name);
@@ -124,16 +127,16 @@ var education = {
   "schools" : [{
     "name" : "McKendree University",
     "location" : "Lebanon, IL",
-    "degree" : "BS",
+    "degree" : "Bachelor of Science",
     "majors" : ["biology"],
     "dates" : "1989 - 1993",
     "url" : "http://www.mckendree.edu"
   }],
   "onlineCourses" : [{
-    "title" : "Intro to Java Programming",
+    "title" : "Front End Web Development Nanodegree",
     "school" : "Udacity",
-    "dates" : 2014,
-    "url" : "https://www.udacity.com/course/cs046"
+    "dates" : "2014 - 2015",
+    "url" : "https://www.udacity.com/course/nd001"
   },{
     "title" : "Try Git",
     "school" : "Code School",
@@ -143,7 +146,7 @@ var education = {
   "display" : function() {
     $("#education").append(HTMLschoolStart);
     for (index in education.schools) {
-      formattedName = HTMLschoolName.replace("%data%",education.schools[index].name);
+      formattedName = HTMLschoolName.replace("%data%",education.schools[index].name).replace("%url%",education.schools[index].url);
       formattedDegree = HTMLschoolDegree.replace("%data%",education.schools[index].degree);
       $(".education-entry:last").append(formattedName + formattedDegree);
       formattedDates = HTMLschoolDates.replace("%data%",education.schools[index].dates);
@@ -180,6 +183,8 @@ projects.display();
 
 education.display();
 
+/**
+ * used to modify name, not part of end result webpage
 function inName() {
   var nameStr = bio.name;
   var namePart = nameStr.split(" ");
@@ -188,5 +193,6 @@ function inName() {
 }
 
 $("#main").append(internationalizeButton);
+*/
 
 $("#mapDiv").append(googleMap);

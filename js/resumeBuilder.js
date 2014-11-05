@@ -78,7 +78,7 @@ var bio = {
   "role" : "Web Developer",
   "welcomeMessage" : "This is a welcome message - at least it's better than Hello World!",
   "contacts" : {
-    "mobile" : "618-225-0351",
+    "mobile" : "618-225-XXXX",
     "email" : "ghill315@att.net",
     "github" : "sentry71",
     "linkedin" : "garyhilljr",
@@ -101,9 +101,7 @@ var bio = {
     formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
     $("#topContacts").append(formattedGithub);
     $("#footerContacts").append(formattedGithub);
-    //formattedLinkedin = HTMLcontactGeneric.replace("%data%",bio.contacts.linkedin).replace("%contact%","linkedin");
-    formattedLinkedin = HTMLcontactGeneric.replace("%data%",bio.contacts.linkedin);
-    formattedLinkedin = formattedLinkedin.replace("%contact%","linkedin");
+    formattedLinkedin = HTMLcontactGeneric.replace("%data%",bio.contacts.linkedin).replace("%contact%","linkedin");
     $("#topContacts").append(formattedLinkedin);
     $("#footerContacts").append(formattedLinkedin);
     formattedLocation= HTMLlocation.replace("%data%",bio.contacts.location);

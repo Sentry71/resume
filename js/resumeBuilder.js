@@ -19,8 +19,7 @@ var work = {
       $("#workExperience").append(HTMLworkStart);
       formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[index].employer);
       formattedTitle = HTMLworkTitle.replace("%data%",work.jobs[index].title);
-      formattedEmployerTitle = formattedEmployer + formattedTitle;
-      $(".work-entry:last").append(formattedEmployerTitle);
+      $(".work-entry:last").append(formattedEmployer + formattedTitle);
 
       formattedDates = HTMLworkDates.replace("%data%",work.jobs[index].dates);
       $(".work-entry:last").append(formattedDates);
@@ -51,8 +50,8 @@ var projects = {
   },{
     "title" : "Web Portfolio",
     "dates" : 2014,
-    "description" : "Web page detailing projects finished with the Nanodegree courses.",
-    "images": ["images/197x148.gif","images/197x148.gif"],
+    "description" : "Web page detailing projects finished within the Nanodegree courses.",
+    "images": ["images/nano-p1-1.png","images/nano-p1-2.png"],
     "url" : "http://sentry71.github.io/portfolio"
   }],
   "display" : function() {
@@ -84,6 +83,7 @@ var bio = {
     "mobile" : "618-225-XXXX",
     "email" : "ghill315@att.net",
     "github" : "sentry71",
+    "blog" : "hill-nano",
     "linkedin" : "garyhilljr",
     "location" : "Shiloh, IL",
     "pin" : "red"
@@ -105,7 +105,10 @@ var bio = {
     formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
     $("#topContacts").append(formattedGithub);
     $("#footerContacts").append(formattedGithub);
-    formattedLinkedin = HTMLcontactGeneric.replace("%data%",bio.contacts.linkedin).replace("%contact%","linkedin");
+    formattedBlog = HTMLblog.replace("%data%",bio.contacts.blog);
+    $("#topContacts").append(formattedBlog);
+    $("#footerContacts").append(formattedBlog);
+    formattedLinkedin = HTMLlinkedin.replace("%data%",bio.contacts.linkedin);
     $("#topContacts").append(formattedLinkedin);
     $("#footerContacts").append(formattedLinkedin);
     formattedLocation= HTMLlocation.replace("%data%",bio.contacts.location);

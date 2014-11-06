@@ -2,13 +2,12 @@ var HTMLheaderName = "<h1 id='name'>%data%</h1>";
 var HTMLheaderRole = "<span class='white-text'>%data%</span><hr/>";
 
 var HTMLcontactGeneric = "<li class='flex-item'><span class='orange-text'>%contact%</span><span class='white-text'>%data%</span></li>";
-var HTMLmobile = "<li class='flex-item'><span class='orange-text'>mobile</span><span class='white-text'>%data%</span></li>";
-var HTMLemail = "<li class='flex-item'><span class='orange-text'>email</span><span class='white-text'>%data%</span></li>";
-var HTMLtwitter = "<li class='flex-item'><span class='orange-text'>twitter</span><span class='white-text'>%data%</span></li>";
-var HTMLgithub = "<li class='flex-item'><span class='orange-text'>github</span><span class='white-text'>%data%</span></li>";
-var HTMLlinkedin = "<li class='flex-item'><span class='orange-text'>linkedin</span><span class='white-text'>%data%</span></li>";
-var HTMLblog = "<li class='flex-item'><span class='orange-text'>blog</span><span class='white-text'>%data%</span></li>";
-var HTMLlocation = "<li class='flex-item'><span class='orange-text'>location</span><span class='white-text'>%data%";
+var HTMLmobile = "<li class='flex-item'><span class='orange-text icon-phone'></span><span class='white-text'>%data%</span></li>";
+var HTMLemail = "<li class='flex-item'><span class='orange-text icon-mail'></span><span class='white-text'>%data%</span></li>";
+var HTMLgithub = "<li class='flex-item'><span class='orange-text icon-github'></span><span class='white-text'>%data%</span></li>";
+var HTMLlinkedin = "<li class='flex-item'><span class='orange-text icon-linkedin'></span><span class='white-text'>%data%</span></li>";
+var HTMLblog = "<li class='flex-item'><span class='orange-text icon-blogger'></span><span class='white-text'>%data%</span></li>";
+var HTMLlocation = "<li class='flex-item'><span class='orange-text icon-home'></span><span class='white-text'>%data%";
 var HTMLmapPin = "<img src='http://maps.google.com/mapfiles/ms/icons/%color%-dot.png' class='pin'></span></li>";
 
 var HTMLbioPic = "<img src='%data%' class='biopic'>";
@@ -39,7 +38,6 @@ var HTMLschoolLocation = "<div class='location-text'>%data%";
 var HTMLschoolMapPin = "<img src='http://maps.google.com/mapfiles/ms/icons/%color%-dot.png' class='pin'></div>";
 var HTMLschoolMajor = "<em><br>Major: %data%</em>"
 
-//added ID to HTMLonlineClasses, to address a padding issue via CSS
 var HTMLonlineClasses = "<h3 id='onlineH3'>Online Classes</h3>";
 var HTMLonlineTitle = "<a href='#'>%data%";
 var HTMLonlineSchool = " - %data%</a>";

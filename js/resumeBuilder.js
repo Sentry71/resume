@@ -13,6 +13,13 @@ var work = {
     "pin" : "green",
     "dates" : "June 2000 - October 2007",
     "description" : "Call center technician, specializing in customer support of DSL trouble calls. Also functioned as a team lead in support of other center technicians."
+  },{
+    "employer" : "Memorial Hospital",
+    "title" : "Info Systems Technician",
+    "location" : "Belleville, IL",
+    "pin" : "blue",
+    "dates" : "1998 - May 2000",
+    "description" : "Ran reports and backup procedures on a large mainframe, with additional support for user equipment on an as-needed basis."
   }],
   "display" : function() {
     for (index in work.jobs){
@@ -72,7 +79,7 @@ var projects = {
 var bio = {
   "name" : "Gary Hill",
   "role" : "Web Developer",
-  "welcomeMessage" : "This is a welcome message - at least it's better than Hello World!",
+  "welcomeMessage" : "Welcome to my online resume. Hopefully it is a step above 'Hello World!'",
   "contacts" : {
     "mobile" : "618-225-XXXX",
     "email" : "ghill315@att.net",
@@ -83,7 +90,7 @@ var bio = {
     "pin" : "red"
   },
   "skills" : ["HTML","CSS","JavaScript","Perl","Oracle"],
-  "bioPic" : "images/fry.jpg",
+  "bioPic" : "images/gold_centurion_poster.jpg",
   "display" : function() {
     formattedName = HTMLheaderName.replace("%data%",bio.name);
     formattedRole = HTMLheaderRole.replace("%data%",bio.role);

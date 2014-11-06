@@ -1,13 +1,15 @@
 var HTMLheaderName = "<h1 id='name'>%data%</h1>";
-var HTMLheaderRole = "<span>%data%</span><hr/>";
+var HTMLheaderRole = "<span class='white-text'>%data%</span><hr/>";
 
 var HTMLcontactGeneric = "<li class='flex-item'><span class='orange-text'>%contact%</span><span class='white-text'>%data%</span></li>";
 var HTMLmobile = "<li class='flex-item'><span class='orange-text'>mobile</span><span class='white-text'>%data%</span></li>";
 var HTMLemail = "<li class='flex-item'><span class='orange-text'>email</span><span class='white-text'>%data%</span></li>";
 var HTMLtwitter = "<li class='flex-item'><span class='orange-text'>twitter</span><span class='white-text'>%data%</span></li>";
 var HTMLgithub = "<li class='flex-item'><span class='orange-text'>github</span><span class='white-text'>%data%</span></li>";
+var HTMLlinkedin = "<li class='flex-item'><span class='orange-text'>linkedin</span><span class='white-text'>%data%</span></li>";
 var HTMLblog = "<li class='flex-item'><span class='orange-text'>blog</span><span class='white-text'>%data%</span></li>";
-var HTMLlocation = "<li class='flex-item'><span class='orange-text'>location</span><span class='white-text'>%data%</span></li>";
+var HTMLlocation = "<li class='flex-item'><span class='orange-text'>location</span><span class='white-text'>%data%";
+var HTMLmapPin = "<img src='http://maps.google.com/mapfiles/ms/icons/%color%-dot.png' class='pin'></span></li>";
 
 var HTMLbioPic = "<img src='%data%' class='biopic'>";
 var HTMLWelcomeMsg = "<span class='welcome-message'>%data%</span>";
@@ -19,7 +21,8 @@ var HTMLworkStart = "<div class='work-entry'></div>";
 var HTMLworkEmployer = "<a href='#'>%data%";
 var HTMLworkTitle = " - %data%</a>";
 var HTMLworkDates = "<div class='date-text'>%data%</div>";
-var HTMLworkLocation = "<div class='location-text'>%data%</div>";
+var HTMLworkLocation = "<div class='location-text'>%data%";
+var HTMLworkMapPin = "<img src='http://maps.google.com/mapfiles/ms/icons/%color%-dot.png' class='pin'></div>";
 var HTMLworkDescription = "<p><br>%data%</p>";
 
 var HTMLprojectStart = "<div class='project-entry'></div>";
@@ -32,7 +35,8 @@ var HTMLschoolStart = "<div class='education-entry'></div>";
 var HTMLschoolName = "<a href='%url%'>%data%";
 var HTMLschoolDegree = " -- %data%</a>";
 var HTMLschoolDates = "<div class='date-text'>%data%</div>";
-var HTMLschoolLocation = "<div class='location-text'>%data%</div>";
+var HTMLschoolLocation = "<div class='location-text'>%data%";
+var HTMLschoolMapPin = "<img src='http://maps.google.com/mapfiles/ms/icons/%color%-dot.png' class='pin'></div>";
 var HTMLschoolMajor = "<em><br>Major: %data%</em>"
 
 //added ID to HTMLonlineClasses, to address a padding issue via CSS
@@ -83,20 +87,20 @@ function initializeMap() {
 
     var loc = bio.contacts.location;
     var loc_txt = "Home";
-    var color = "red";
+    var color = bio.contacts.pin;
     locations.push([loc,loc_txt,color]);
 
     for (var school in education.schools) {
       var loc = education.schools[school].location;
       var loc_txt = education.schools[school].name;
-      var color = "yellow";
+      var color = education.schools[school].pin;
       locations.push([loc,loc_txt,color]);
     }
 
     for (var job in work.jobs) {
       var loc = work.jobs[job].location;
       var loc_txt = work.jobs[job].employer;
-      var color = "green";
+      var color = work.jobs[job].pin;
       locations.push([loc,loc_txt,color]);
     }
 

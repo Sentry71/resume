@@ -2,12 +2,12 @@ var HTMLheaderName = "<h1 id='name'>%data%</h1>";
 var HTMLheaderRole = "<span class='white-text'>%data%</span><hr/>";
 
 var HTMLcontactGeneric = "<li class='flex-item'><span class='orange-text'>%contact%</span><span class='white-text'>%data%</span></li>";
-var HTMLmobile = "<li class='flex-item'><span class='orange-text icon-phone'></span><span class='white-text'>%data%</span></li>";
-var HTMLemail = "<li class='flex-item'><span class='orange-text icon-mail'></span><span class='white-text'>%data%</span></li>";
-var HTMLgithub = "<li class='flex-item'><span class='orange-text icon-github'></span><span class='white-text'>%data%</span></li>";
-var HTMLlinkedin = "<li class='flex-item'><span class='orange-text icon-linkedin'></span><span class='white-text'>%data%</span></li>";
-var HTMLblog = "<li class='flex-item'><span class='orange-text icon-blogger'></span><span class='white-text'>%data%</span></li>";
-var HTMLlocation = "<li class='flex-item'><span class='orange-text icon-home'></span><span class='white-text'>%data%";
+var HTMLmobile = "<li class='flex-item'><span class='orange-text icon-phone' title='mobile'></span><span class='white-text'>%data%</span></li>";
+var HTMLemail = "<li class='flex-item'><span class='orange-text icon-mail' title='email'></span><span class='white-text'>%data%</span></li>";
+var HTMLgithub = "<li class='flex-item'><span class='orange-text icon-github' title='GitHub'></span><span class='white-text'>%data%</span></li>";
+var HTMLlinkedin = "<li class='flex-item'><span class='orange-text icon-linkedin' title='LinkedIn'></span><span class='white-text'>%data%</span></li>";
+var HTMLblog = "<li class='flex-item'><span class='orange-text icon-blogger' title='blog'></span><span class='white-text'>%data%</span></li>";
+var HTMLlocation = "<li class='flex-item'><span class='orange-text icon-home' title='home'></span><span class='white-text'>%data%";
 var HTMLmapPin = "<img src='http://maps.google.com/mapfiles/ms/icons/%color%-dot.png' class='pin'></span></li>";
 
 var HTMLbioPic = "<img src='%data%' class='biopic'>";
@@ -31,7 +31,7 @@ var HTMLprojectDescription = "<p><br>%data%</p>";
 var HTMLprojectImage = "<img src='%data%'>";
 
 var HTMLschoolStart = "<div class='education-entry'></div>";
-var HTMLschoolName = "<a href='%url%'>%data%";
+var HTMLschoolName = "<a href='%url%' target='_blank'>%data%";
 var HTMLschoolDegree = " -- %data%</a>";
 var HTMLschoolDates = "<div class='date-text'>%data%</div>";
 var HTMLschoolLocation = "<div class='location-text'>%data%";
@@ -42,7 +42,7 @@ var HTMLonlineClasses = "<h3 id='onlineH3'>Online Classes</h3>";
 var HTMLonlineTitle = "<a href='#'>%data%";
 var HTMLonlineSchool = " - %data%</a>";
 var HTMLonlineDates = "<div class='date-text'>%data%</div>";
-var HTMLonlineURL = "<br><a href='#'>%data%</a>";
+var HTMLonlineURL = "<br><a href='#' target='_blank'>%data%</a>";
 
 var internationalizeButton = "<button>Internationalize</button>";
 var googleMap = "<div id='map'></div>";

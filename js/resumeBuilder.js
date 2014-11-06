@@ -42,12 +42,6 @@ var projects = {
     "images": ["images/1st_column.jpg","images/1st_column_2.jpg"],
     "url" : "http://1stcolumn.org"
   },{
-    "title" : "Interactive Resume",
-    "dates" : 2014,
-    "description" : "Resume with data dynamically added to the web page.",
-    "images": ["images/197x148.gif","images/197x148.gif"],
-    "url" : "#"
-  },{
     "title" : "Web Portfolio",
     "dates" : 2014,
     "description" : "Web page detailing projects finished within the Nanodegree courses.",
@@ -178,7 +172,7 @@ var education = {
         $(".education-entry:last").append(formattedTitle + formattedSchool);
         formattedDates = HTMLonlineDates.replace("%data%",education.onlineCourses[index].dates);
         $(".education-entry:last").append(formattedDates);
-        formattedURL = HTMLonlineURL.replace("%data%",education.onlineCourses[index].url);
+        formattedURL = HTMLonlineURL.replace("%data%",education.onlineCourses[index].url).replace("#",education.onlineCourses[index].url);
         $(".education-entry:last").append(formattedURL);
       }
     }

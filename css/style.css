@@ -63,7 +63,6 @@ h2, h3, h4, h5 {
   color: #999999;
   line-height: 16px;
   float: right;
-
 }
 
 p {
@@ -97,18 +96,6 @@ a {
 
 #onlineH3 {
   padding-left: 0;
-}
-
-#container {
-  padding: 0;
-}
-
-#col-left {
-  width: 60%;
-}
-
-#col-right {
-  width: 40%;
 }
 
 .orange {
@@ -171,6 +158,10 @@ img {
   padding: 10px;
 }
 
+.pin {
+  padding: 0;
+  vertical-align: top;
+}
 
 /* Bar chart stuff */
 .chart div {

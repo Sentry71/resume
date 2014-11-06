@@ -13,14 +13,20 @@ var work = {
     "pin" : "green",
     "dates" : "June 2000 - October 2007",
     "description" : "Call center technician, specializing in customer support of DSL trouble calls. Also functioned as a team lead in support of other center technicians."
+  },{
+    "employer" : "Memorial Hospital",
+    "title" : "Info Systems Technician",
+    "location" : "Belleville, IL",
+    "pin" : "blue",
+    "dates" : "1998 - May 2000",
+    "description" : "Ran reports and backup procedures on a large mainframe, with additional support for user equipment on an as-needed basis."
   }],
   "display" : function() {
     for (index in work.jobs){
       $("#workExperience").append(HTMLworkStart);
       formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[index].employer);
       formattedTitle = HTMLworkTitle.replace("%data%",work.jobs[index].title);
-      formattedEmployerTitle = formattedEmployer + formattedTitle;
-      $(".work-entry:last").append(formattedEmployerTitle);
+      $(".work-entry:last").append(formattedEmployer + formattedTitle);
 
       formattedDates = HTMLworkDates.replace("%data%",work.jobs[index].dates);
       $(".work-entry:last").append(formattedDates);
@@ -43,16 +49,10 @@ var projects = {
     "images": ["images/1st_column.jpg","images/1st_column_2.jpg"],
     "url" : "http://1stcolumn.org"
   },{
-    "title" : "Interactive Resume",
-    "dates" : 2014,
-    "description" : "Resume with data dynamically added to the web page.",
-    "images": ["images/197x148.gif","images/197x148.gif"],
-    "url" : "#"
-  },{
     "title" : "Web Portfolio",
     "dates" : 2014,
-    "description" : "Web page detailing projects finished with the Nanodegree courses.",
-    "images": ["images/197x148.gif","images/197x148.gif"],
+    "description" : "Web page detailing projects finished within the Nanodegree courses.",
+    "images": ["images/nano-p1-1.png","images/nano-p1-2.png"],
     "url" : "http://sentry71.github.io/portfolio"
   }],
   "display" : function() {
@@ -79,17 +79,18 @@ var projects = {
 var bio = {
   "name" : "Gary Hill",
   "role" : "Web Developer",
-  "welcomeMessage" : "This is a welcome message - at least it's better than Hello World!",
+  "welcomeMessage" : "Welcome to my online resume. Hopefully it is a step above 'Hello World!'",
   "contacts" : {
     "mobile" : "618-225-XXXX",
     "email" : "ghill315@att.net",
     "github" : "sentry71",
+    "blog" : "hill-nano",
     "linkedin" : "garyhilljr",
     "location" : "Shiloh, IL",
     "pin" : "red"
   },
   "skills" : ["HTML","CSS","JavaScript","Perl","Oracle"],
-  "bioPic" : "images/fry.jpg",
+  "bioPic" : "images/gold_centurion_poster.jpg",
   "display" : function() {
     formattedName = HTMLheaderName.replace("%data%",bio.name);
     formattedRole = HTMLheaderRole.replace("%data%",bio.role);
@@ -105,7 +106,10 @@ var bio = {
     formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
     $("#topContacts").append(formattedGithub);
     $("#footerContacts").append(formattedGithub);
-    formattedLinkedin = HTMLcontactGeneric.replace("%data%",bio.contacts.linkedin).replace("%contact%","linkedin");
+    formattedBlog = HTMLblog.replace("%data%",bio.contacts.blog);
+    $("#topContacts").append(formattedBlog);
+    $("#footerContacts").append(formattedBlog);
+    formattedLinkedin = HTMLlinkedin.replace("%data%",bio.contacts.linkedin);
     $("#topContacts").append(formattedLinkedin);
     $("#footerContacts").append(formattedLinkedin);
     formattedLocation= HTMLlocation.replace("%data%",bio.contacts.location);
@@ -175,7 +179,7 @@ var education = {
         $(".education-entry:last").append(formattedTitle + formattedSchool);
         formattedDates = HTMLonlineDates.replace("%data%",education.onlineCourses[index].dates);
         $(".education-entry:last").append(formattedDates);
-        formattedURL = HTMLonlineURL.replace("%data%",education.onlineCourses[index].url);
+        formattedURL = HTMLonlineURL.replace("%data%",education.onlineCourses[index].url).replace("#",education.onlineCourses[index].url);
         $(".education-entry:last").append(formattedURL);
       }
     }

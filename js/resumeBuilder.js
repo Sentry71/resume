@@ -3,14 +3,16 @@ var work = {
     "employer": "AT&T",
     "title" : "Senior IT Analyst",
     "location" : "Earth City, MO",
+    "pin" : "green",
     "dates" : "October 2007 - present",
     "description" : "Programmer and web developer, specializing in full stack web development of tools for use by internal AT&T customer support teams."
   },{
     "employer": "AT&T",
     "title" : "Network Center Technician",
     "location" : "Earth City, MO",
+    "pin" : "green",
     "dates" : "June 2000 - October 2007",
-    "description" : "Call center technician, specializing in customer support of DSL trouble calls."
+    "description" : "Call center technician, specializing in customer support of DSL trouble calls. Also functioned as a team lead in support of other center technicians."
   }],
   "display" : function() {
     for (index in work.jobs){
@@ -24,7 +26,8 @@ var work = {
       $(".work-entry:last").append(formattedDates);
 
       formattedLocation = HTMLworkLocation.replace("%data%",work.jobs[index].location);
-      $(".work-entry:last").append(formattedLocation);
+      formattedPin = HTMLworkMapPin.replace("%color%",work.jobs[index].pin);
+      $(".work-entry:last").append(formattedLocation + formattedPin);
 
       formattedDescription = HTMLworkDescription.replace("%data%",work.jobs[index].description);
       $(".work-entry:last").append(formattedDescription);
@@ -50,7 +53,7 @@ var projects = {
     "dates" : 2014,
     "description" : "Web page detailing projects finished with the Nanodegree courses.",
     "images": ["images/197x148.gif","images/197x148.gif"],
-    "url" : "#"
+    "url" : "http://sentry71.github.io/portfolio"
   }],
   "display" : function() {
     $("#projects").append(HTMLprojectStart);
@@ -82,7 +85,8 @@ var bio = {
     "email" : "ghill315@att.net",
     "github" : "sentry71",
     "linkedin" : "garyhilljr",
-    "location" : "Shiloh, IL"
+    "location" : "Shiloh, IL",
+    "pin" : "red"
   },
   "skills" : ["HTML","CSS","JavaScript","Perl","Oracle"],
   "bioPic" : "images/fry.jpg",
@@ -105,8 +109,9 @@ var bio = {
     $("#topContacts").append(formattedLinkedin);
     $("#footerContacts").append(formattedLinkedin);
     formattedLocation= HTMLlocation.replace("%data%",bio.contacts.location);
-    $("#topContacts").append(formattedLocation);
-    $("#footerContacts").append(formattedLocation);
+    formattedPin = HTMLmapPin.replace("%color%",bio.contacts.pin);
+    $("#topContacts").append(formattedLocation + formattedPin);
+    $("#footerContacts").append(formattedLocation + formattedPin);
 
     formattedPic = HTMLbioPic.replace("%data%",bio.bioPic);
     $("#header").append(formattedPic);
@@ -130,7 +135,8 @@ var education = {
     "degree" : "Bachelor of Science",
     "majors" : ["biology"],
     "dates" : "1989 - 1993",
-    "url" : "http://www.mckendree.edu"
+    "url" : "http://www.mckendree.edu",
+    "pin" : "yellow"
   }],
   "onlineCourses" : [{
     "title" : "Front End Web Development Nanodegree",
@@ -152,7 +158,8 @@ var education = {
       formattedDates = HTMLschoolDates.replace("%data%",education.schools[index].dates);
       $(".education-entry:last").append(formattedDates);
       formattedLocation = HTMLschoolLocation.replace("%data%",education.schools[index].location);
-      $(".education-entry:last").append(formattedLocation);
+      formattedPin = HTMLschoolMapPin.replace("%color%",education.schools[index].pin);
+      $(".education-entry:last").append(formattedLocation + formattedPin);
       if (education.schools[index].majors.length > 0) {
         for (index2 in education.schools[index].majors){
           var formattedMajor = HTMLschoolMajor.replace("%data%",education.schools[index].majors[index2]);

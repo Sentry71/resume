@@ -63,6 +63,7 @@ h2, h3, h4, h5 {
   color: #999999;
   line-height: 16px;
   float: right;
+  margin-top: 0px;
 }
 
 p {
@@ -169,6 +170,7 @@ img {
 .pin {
   padding: 0;
   vertical-align: top;
+  cursor: pointer;
 }
 
 /* Bar chart stuff */

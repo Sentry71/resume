@@ -67,6 +67,32 @@ $(document).click(function(loc) {
   logClicks (x,y);
 });
 
+// toggle functions to show/hide sections
+$(document).on('click', '#work-toggle', function() {
+  $(".work-entry").toggle();
+  $("#work-toggle").toggleClass('icon-arrow-up icon-arrow-down');
+});
+
+$(document).on('click', '#project-toggle', function() {
+  $(".project-entry").toggle();
+  $("#project-toggle").toggleClass('icon-arrow-up icon-arrow-down');
+});
+
+$(document).on('click', '#education-toggle', function() {
+  $(".education-entry").toggle();
+  $("#education-toggle").toggleClass('icon-arrow-up icon-arrow-down');
+});
+
+$(document).on('click', '#map-toggle', function() {
+  $("#map").toggle();
+  if($("#map").is(":hidden")){
+    $("#mapDiv").height('0');
+  }else{
+    $("#mapDiv").height('400');
+  }
+  $("#map-toggle").toggleClass('icon-arrow-up icon-arrow-down');
+});
+
 // Google map functions
 var map;
 

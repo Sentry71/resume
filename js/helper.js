@@ -8,7 +8,7 @@ var HTMLgithub = "<li class='flex-item'><span class='orange-text icon-github' ti
 var HTMLlinkedin = "<li class='flex-item'><span class='orange-text icon-linkedin' title='LinkedIn'></span><span class='white-text'>%data%</span></li>";
 var HTMLblog = "<li class='flex-item'><span class='orange-text icon-blogger' title='blog'></span><span class='white-text'>%data%</span></li>";
 var HTMLlocation = "<li class='flex-item'><span class='orange-text icon-home' title='home'></span><span class='white-text'>%data%";
-var HTMLmapPin = "<img src='http://maps.google.com/mapfiles/ms/icons/%color%-dot.png' class='pin'></span></li>";
+var HTMLmapPin = "<img src='http://maps.google.com/mapfiles/ms/icons/%color%-dot.png' class='pin' onClick='location.href=\"#mapDiv\"'></span></li>";
 
 var HTMLbioPic = "<img src='%data%' class='biopic'>";
 var HTMLWelcomeMsg = "<span class='welcome-message'>%data%</span>";
@@ -21,7 +21,7 @@ var HTMLworkEmployer = "<a href='#'>%data%";
 var HTMLworkTitle = " - %data%</a>";
 var HTMLworkDates = "<div class='date-text'>%data%</div>";
 var HTMLworkLocation = "<div class='location-text'>%data%";
-var HTMLworkMapPin = "<img src='http://maps.google.com/mapfiles/ms/icons/%color%-dot.png' class='pin'></div>";
+var HTMLworkMapPin = "<img src='http://maps.google.com/mapfiles/ms/icons/%color%-dot.png' class='pin' onClick='location.href=\"#mapDiv\"'></div>";
 var HTMLworkDescription = "<p><br>%data%</p>";
 
 var HTMLprojectStart = "<div class='project-entry'></div>";
@@ -35,7 +35,7 @@ var HTMLschoolName = "<a href='%url%' target='_blank'>%data%";
 var HTMLschoolDegree = " -- %data%</a>";
 var HTMLschoolDates = "<div class='date-text'>%data%</div>";
 var HTMLschoolLocation = "<div class='location-text'>%data%";
-var HTMLschoolMapPin = "<img src='http://maps.google.com/mapfiles/ms/icons/%color%-dot.png' class='pin'></div>";
+var HTMLschoolMapPin = "<img src='http://maps.google.com/mapfiles/ms/icons/%color%-dot.png' class='pin' onClick='location.href=\"#mapDiv\"'></div>";
 var HTMLschoolMajor = "<em><br>Major: %data%</em>"
 
 var HTMLonlineClasses = "<h3 id='onlineH3'>Online Classes</h3>";

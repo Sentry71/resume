@@ -85,13 +85,11 @@ $(document).on('click', '#education-toggle', function() {
 
 $(document).on('click', '#map-toggle', function() {
   $("#map").toggle();
-  console.log($("#mapDiv").height())
-
-  // if($("#mapDiv").height < 0){
-  //   $("#mapDiv").height('400');
-  // }else{
-  //   $("#mapDiv").height('0');
-  // }
+  if($("#map").is(":hidden")){
+    $("#mapDiv").height('0');
+  }else{
+    $("#mapDiv").height('400');
+  }
   $("#map-toggle").toggleClass('icon-arrow-up icon-arrow-down');
 });
 

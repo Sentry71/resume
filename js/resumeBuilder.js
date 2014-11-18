@@ -21,7 +21,7 @@ var work = {
     "dates" : "1998 - May 2000",
     "description" : "Ran reports and backup procedures on a large mainframe, with additional support for user equipment on an as-needed basis."
   }],
-  "display" : function() {
+  display : function() {
     for (index in work.jobs){
       $("#workExperience").append(HTMLworkStart);
       formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[index].employer);
@@ -55,7 +55,7 @@ var projects = {
     "images": ["images/nano-p1-1.png","images/nano-p1-2.png"],
     "url" : "http://sentry71.github.io/portfolio"
   }],
-  "display" : function() {
+  display : function() {
     $("#projects").append(HTMLprojectStart);
     for (index in projects.projects) {
       formattedTitle = HTMLprojectTitle.replace("%data%",projects.projects[index].title).replace("%url%",projects.projects[index].url);
@@ -91,7 +91,7 @@ var bio = {
   },
   "skills" : ["HTML","CSS","JavaScript","Perl","Oracle"],
   "bioPic" : "images/gold_centurion_poster.jpg",
-  "display" : function() {
+  display : function() {
     formattedName = HTMLheaderName.replace("%data%",bio.name);
     formattedRole = HTMLheaderRole.replace("%data%",bio.role);
     $("#header").prepend(formattedRole);
@@ -153,7 +153,7 @@ var education = {
     "dates" : 2014,
     "url" : "https://try.github.io"
   }],
-  "display" : function() {
+  display : function() {
     $("#education").append(HTMLschoolStart);
     for (index in education.schools) {
       formattedName = HTMLschoolName.replace("%data%",education.schools[index].name).replace("%url%",education.schools[index].url);

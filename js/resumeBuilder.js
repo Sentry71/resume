@@ -54,7 +54,14 @@ var projects = {
     "description" : "Web page detailing projects finished within the Nanodegree courses.",
     "images": ["images/nano-p1-1.png","images/nano-p1-2.png"],
     "url" : "http://sentry71.github.io/portfolio"
-  }],
+  },{
+    "title" : "Arcade Clone",
+    "dates" : 2014,
+    "description" : "Frogger-like game, using object oriented JavaScript and HTML5 canvas.",
+    "images": ["images/nano-p3-1.png","images/nano-p3-2.png"],
+    "url" : "http://sentry71.github.io/arcade"
+  }
+  ],
   display : function() {
     $("#projects").append(HTMLprojectStart);
     for (index in projects.projects) {

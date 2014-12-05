@@ -181,7 +181,7 @@ var education = {
     if (education.onlineCourses.length > 0) {
       $(".education-entry:last").append(HTMLonlineClasses);
       for (index in education.onlineCourses) {
-        formattedTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[index].title);
+        formattedTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[index].title).replace("#",education.onlineCourses[index].url);
         formattedSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[index].school);
         $(".education-entry:last").append(formattedTitle + formattedSchool);
         formattedDates = HTMLonlineDates.replace("%data%",education.onlineCourses[index].dates);

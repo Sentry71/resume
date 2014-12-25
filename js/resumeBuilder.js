@@ -57,7 +57,7 @@ var projects = {
   },{
     "title" : "Arcade Clone",
     "dates" : 2014,
-    "description" : "Frogger-like game, using object oriented JavaScript and HTML5 canvas.",
+    "description" : "Frogger-like game, using object oriented JavaScript and HTML5 canvas.<br>Featured in Udacity's list of <a class='inline' href='http://blog.udacity.com/2014/12/best-student-projects-2014.html'>'Best Student Projects of 2014'</a>.",
     "images": ["images/nano-p3-1.png","images/nano-p3-2.png"],
     "url" : "http://sentry71.github.io/arcade"
   }
@@ -181,7 +181,7 @@ var education = {
     if (education.onlineCourses.length > 0) {
       $(".education-entry:last").append(HTMLonlineClasses);
       for (index in education.onlineCourses) {
-        formattedTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[index].title);
+        formattedTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[index].title).replace("#",education.onlineCourses[index].url);
         formattedSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[index].school);
         $(".education-entry:last").append(formattedTitle + formattedSchool);
         formattedDates = HTMLonlineDates.replace("%data%",education.onlineCourses[index].dates);

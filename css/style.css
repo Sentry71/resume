@@ -156,6 +156,9 @@ ul {
   list-style-type: none;
 }
 
+.inline {
+  display: inline;
+}
 
 .biopic {
   float: left;

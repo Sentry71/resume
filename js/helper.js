@@ -132,8 +132,8 @@ function initializeMap() {
   }
 
   function createMapMarker(placeData, note, pinColor) {
-    var lat = placeData.geometry.location.k;
-    var lon = placeData.geometry.location.B;
+    var lat = placeData.geometry.location.lat();
+    var lon = placeData.geometry.location.lng();
     var name = placeData.formatted_address;
     var bounds = window.mapBounds;
 
